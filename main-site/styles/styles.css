@@ -596,68 +596,105 @@ blockquote {
 }
 
 /* ==============================================
-   NEW: CONTACT FORM & CTA STYLES
+   FIXED: CONTACT PAGE LAYOUT & FORM ALIGNMENT
    ==============================================
 */
 
-/* --- Enquiry Form --- */
-.enquiry-form {
-    padding: 2.5rem 2rem !important;
-    border-radius: var(--border-radius);
-    box-shadow: 0 4px 12px rgba(75, 46, 145, 0.08);
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-}
-
-.form-group {
-    margin-bottom: 1.8rem;
-}
-
-.form-row {
+/* --- Help Cards (Top 3 Boxes) --- */
+.help-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    margin-top: 2rem;
 }
 
+.help-card {
+    background: #ffffff;
+    padding: 1.8rem 1.6rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(75, 46, 145, 0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.help-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.help-card p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Form Container --- */
+.enquiry-form {
+    background: transparent;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+/* --- Form Groups & Labels --- */
+.form-group {
+    margin-bottom: 1.4rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* --- Inputs, Selects, Textareas --- */
 .form-control {
     width: 100%;
-    padding: 0.85rem 1rem;
-    border: 2px solid var(--color-light-purple);
-    border-radius: var(--border-radius);
-    font-family: var(--font-base);
+    padding: 0.75rem 1rem;
+    border: 1px solid #C4B0F2;
+    border-radius: 6px;
     font-size: 1rem;
-    background-color: var(--color-white);
-    color: var(--color-text);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #ffffff;
+    color: #333344;
+    box-sizing: border-box;
 }
 
 .form-control:focus {
     outline: none;
-    border-color: var(--color-mid-purple);
-    box-shadow: 0 0 0 3px rgba(122, 87, 209, 0.15);
+    border-color: #7A57D1;
+    box-shadow: 0 0 0 2px rgba(122, 87, 209, 0.12);
 }
 
-.form-control::placeholder {
-    color: #9988BB;
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
 }
 
-/* --- CTA Button Enhancement --- */
-.btn-large {
-    padding: 1rem 2.5rem !important;
-    font-size: 1.1rem !important;
-}
-
+/* --- Submit Button --- */
 .form-actions {
-    text-align: center;
-    margin-top: 2rem;
+    margin-top: 1.8rem;
+    text-align: left;
 }
 
-/* --- Responsive Form --- */
-@media (max-width: 600px) {
-    .form-row {
+.btn-large {
+    padding: 0.8rem 2rem !important;
+    font-size: 1rem !important;
+    border-radius: 6px !important;
+    background: #4B2E91 !important;
+    color: #ffffff !important;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-large:hover {
+    background: #2A1A57 !important;
+}
+
+/* --- Responsive Fix --- */
+@media (max-width: 768px) {
+    .help-grid {
         grid-template-columns: 1fr;
-    }
-    .enquiry-form {
-        padding: 2rem 1.5rem !important;
     }
 }
