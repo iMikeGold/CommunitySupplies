@@ -431,3 +431,106 @@ blockquote {
         font-size: 2rem;
     }
 }
+
+/* ==============================================
+   ADDITIONAL STYLES — for About & Community pages
+   ==============================================
+*/
+
+/* Smaller hero for inner pages */
+.hero-small {
+    padding: 2.5rem 0;
+}
+
+.hero-content.centered {
+    text-align: center;
+}
+
+/* Content sections */
+.content-section {
+    padding: 3rem 0;
+}
+
+.content-section.bg-pale {
+    background-color: var(--color-pale-lavender);
+}
+
+.content-section h2 {
+    text-align: center;
+    color: var(--color-deep-purple);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+}
+
+.narrow {
+    max-width: 800px;
+}
+
+.large-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* Column layouts */
+.two-column-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.three-column-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+/* Check list */
+.check-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-mid-purple);
+    font-weight: bold;
+}
+
+/* Larger grid for community links */
+.large-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.feature-block {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.feature-block h3 {
+    color: var(--color-deep-purple);
+    margin-bottom: 0.75rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .two-column-grid {
+        grid-template-columns: 1fr;
+    }
+}
