@@ -1,1 +1,433 @@
+/* ==============================================
+   COLOUR PALETTE KEY — MATCHED TO LOGO
+   ==============================================
+   --color-pale-lavender : #ECE6F9  | Page background, soft areas
+   --color-light-purple  : #C4B0F2  | Highlights, borders, secondary elements
+   --color-mid-purple    : #7A57D1  | Buttons, accents, active states
+   --color-deep-purple   : #4B2E91  | Headings, navigation, strong text
+   --color-darkest-purple: #2A1A57  | Footer, heavy text, dark backgrounds
+   --color-white         : #FFFFFF  | Text on dark, clean backgrounds
+   --color-text          : #333344  | Body text, readable grey-purple
+*/
 
+:root {
+    --color-pale-lavender: #ECE6F9;
+    --color-light-purple: #C4B0F2;
+    --color-mid-purple: #7A57D1;
+    --color-deep-purple: #4B2E91;
+    --color-darkest-purple: #2A1A57;
+    --color-white: #FFFFFF;
+    --color-text: #333344;
+
+    --font-base: 'Segoe UI', Roboto, sans-serif;
+    --spacing: 1.5rem;
+    --border-radius: 8px;
+}
+
+/* ==============================================
+   GLOBAL STYLES — affects all elements
+   ==============================================
+   Reset defaults, set base font/colour/box model
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-pale-lavender);
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img, audio {
+    max-width: 100%;
+    border-radius: var(--border-radius);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==============================================
+   HEADER & NAVIGATION — site header, menu, logo
+   ==============================================
+   Sticky header, responsive nav, shop button styling
+*/
+.site-header {
+    background: var(--color-white);
+    padding: 1rem 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    height: 45px;
+    width: auto;
+}
+
+.logo-tagline {
+    font-weight: 600;
+    color: var(--color-deep-purple);
+    font-size: 1.1rem;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.main-nav a {
+    font-weight: 500;
+    color: var(--color-deep-purple);
+    transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-mid-purple);
+}
+
+.shop-btn {
+    background: var(--color-mid-purple);
+    color: var(--color-white) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--border-radius);
+    transition: background 0.3s !important;
+}
+
+.shop-btn:hover {
+    background: var(--color-deep-purple);
+}
+
+.mobile-menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--color-deep-purple);
+    cursor: pointer;
+}
+
+/* ==============================================
+   HERO SECTION — main landing block
+   ==============================================
+   Large intro, split layout, primary branding
+*/
+.hero {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--color-pale-lavender) 0%, var(--color-light-purple) 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--color-deep-purple);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--color-darkest-purple);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.btn-primary {
+    background: var(--color-deep-purple);
+    color: var(--color-white);
+}
+
+.btn-secondary {
+    background: var(--color-white);
+    color: var(--color-deep-purple);
+    border: 2px solid var(--color-mid-purple);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.hero-logo {
+    max-width: 350px;
+    margin: 0 auto;
+    display: block;
+}
+
+/* ==============================================
+   DAILY HIGHLIGHTS — Art / Song / Inspo cards
+   ==============================================
+   3-column grid, cards with soft shadows
+*/
+.daily-highlights {
+    padding: 4rem 0;
+    background: var(--color-white);
+}
+
+.daily-highlights h2 {
+    text-align: center;
+    color: var(--color-deep-purple);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-card {
+    background: var(--color-pale-lavender);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px rgba(75, 46, 145, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.highlight-card h3 {
+    color: var(--color-deep-purple);
+}
+
+.card-link {
+    margin-top: auto;
+    font-weight: 600;
+    color: var(--color-mid-purple);
+}
+
+blockquote {
+    font-style: italic;
+    color: var(--color-text);
+    border-left: 3px solid var(--color-mid-purple);
+    padding-left: 1rem;
+}
+
+.quote-author {
+    text-align: right;
+    font-weight: 500;
+    color: var(--color-deep-purple);
+}
+
+/* ==============================================
+   ETHOS SECTION — core values / about snippet
+   ==============================================
+   Text block + 3-column feature grid
+*/
+.ethos-section {
+    padding: 4rem 0;
+    background: var(--color-pale-lavender);
+}
+
+.ethos-section h2 {
+    text-align: center;
+    color: var(--color-deep-purple);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.ethos-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+}
+
+.ethos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.ethos-item {
+    background: var(--color-white);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.ethos-item h3 {
+    color: var(--color-deep-purple);
+    margin-bottom: 0.5rem;
+}
+
+/* ==============================================
+   COMMUNITY LINKS — quick access to creative areas
+   ==============================================
+   Grid of cards linking to future community pages
+*/
+.community-links {
+    padding: 4rem 0;
+    background: var(--color-white);
+}
+
+.community-links h2 {
+    text-align: center;
+    color: var(--color-deep-purple);
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.link-card {
+    background: var(--color-pale-lavender);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.link-card h3 {
+    color: var(--color-deep-purple);
+    margin-bottom: 0.5rem;
+}
+
+.link-card:hover {
+    background: var(--color-mid-purple);
+    color: var(--color-white);
+    transform: translateY(-3px);
+}
+
+.link-card:hover h3 {
+    color: var(--color-white);
+}
+
+/* ==============================================
+   FOOTER — site bottom, links & group info
+   ==============================================
+   Dark purple background, white text
+*/
+.site-footer {
+    background: var(--color-darkest-purple);
+    color: var(--color-white);
+    padding: 3rem 0 1.5rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links h4,
+.footer-group h4 {
+    margin-bottom: 1rem;
+    color: var(--color-light-purple);
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-light-purple);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ==============================================
+   RESPONSIVE — mobile & tablet adjustments
+   ==============================================
+   Stacking layouts, mobile menu activation
+*/
+@media (max-width: 768px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
