@@ -534,3 +534,63 @@ blockquote {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==============================================
+   NEW: SPACING & COLOUR CODING FIXES
+   ==============================================
+*/
+
+/* --- Section Spacing Fix --- */
+.section-heading {
+    margin-bottom: 1.5rem !important;
+    margin-top: 2.5rem !important;
+}
+
+.section-lead {
+    margin-bottom: 2rem !important;
+    padding: 0 0.5rem;
+}
+
+.ethos-item, .feature-card, .highlight-card, .link-card {
+    padding: 2rem 1.8rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* --- Colour Coding System --- */
+.color-deep { color: var(--color-deep-purple) !important; }
+.color-mid { color: var(--color-mid-purple) !important; }
+.color-dark { color: var(--color-darkest-purple) !important; }
+.color-text { color: var(--color-text) !important; }
+.color-text-bold { color: var(--color-text); font-weight: 500; }
+
+.color-block-1 {
+    background: #F3EEFC !important;
+    border-left: 4px solid var(--color-light-purple) !important;
+}
+.color-block-2 {
+    background: #EDE5FA !important;
+    border-left: 4px solid #B098EF !important;
+}
+.color-block-3 {
+    background: #E7DBF8 !important;
+    border-left: 4px solid var(--color-mid-purple) !important;
+}
+.color-block-4 {
+    background: #E0D1F6 !important;
+    border-left: 4px solid #6A48C8 !important;
+}
+.color-block-5 {
+    background: #D9C7F4 !important;
+    border-left: 4px solid var(--color-deep-purple) !important;
+}
+.color-block-6 {
+    background: #D2BDF2 !important;
+    border-left: 4px solid #3A237A !important;
+}
+
+/* --- Hover Enhancement --- */
+.link-card:hover {
+    background: var(--color-mid-purple) !important;
+    color: white !important;
+    transform: translateY(-4px);
+}
